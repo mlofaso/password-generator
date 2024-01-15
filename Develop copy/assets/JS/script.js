@@ -3,7 +3,7 @@ var generateBtn = document.querySelector('#generate');
 var lowercaseArr = 'abcdefghijklmnopqrstuvwxyz'.split('');
 var uppercaseArr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 var numericCharactersArr = '0123456789'.split('');
-var specialCharactersArr = ''.split('');
+var specialCharactersArr = '`'.split('');
 
 // create a function that randomly selects an element from an array
 function randomSelection(arr) {
@@ -22,7 +22,10 @@ function generatePassword() {
 
 	// confirm whether or not to include lowercase, uppercase, numeric, and special characters
 	var lowercase = confirm('Do you want lowercase characters in your password?');
-
+	var uppercase = confirm('Do you want uppercase characters in your password?');
+	var numericCharacters = confirm('Do you want numeric characters in your password?');
+	var specialCharacters = confirm('Do you want special characters in your password?');
+	
 	// validate that the user has selected at least one type of character
 
 
