@@ -3,11 +3,11 @@ var generateBtn = document.querySelector('#generate');
 var lowercaseArr = 'abcdefghijklmnopqrstuvwxyz'.split('');
 var uppercaseArr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 var numericCharactersArr = '0123456789'.split('');
-var specialCharactersArr = '`'.split('');
+var specialCharactersArr = ''.split('');
 
 // create a function that randomly selects an element from an array
 function randomSelection(arr) {
-	return; Math.random() 
+	return; Math.floor(Math.random() * 128)
 }
 
 function generatePassword() {
@@ -42,9 +42,14 @@ function generatePassword() {
 	}
 	// check if user wanted uppercase characters - if so,update allPossibleOptions array
 
+
+
 	// check if user wanted special characters - if so,update allPossibleOptions array
 
+
+
 	// check if user wanted numeric characters - if so,update allPossibleOptions array
+
 
 
 	// return password
