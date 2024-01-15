@@ -1,10 +1,13 @@
 // Assignment Code
 var generateBtn = document.querySelector('#generate');
 var lowercaseArr = 'abcdefghijklmnopqrstuvwxyz'.split('');
+var uppercaseArr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+var numericCharactersArr = '0123456789'.split('');
+var specialCharactersArr = ''.split('');
 
 // create a function that randomly selects an element from an array
 function randomSelection(arr) {
-	return; //the randomly selected element
+	return; Math.random() 
 }
 
 function generatePassword() {
@@ -15,10 +18,13 @@ function generatePassword() {
 
 	// verify that pwLength is between 8 and 128 included - if not alert the user and exit the function
 
+  
+
 	// confirm whether or not to include lowercase, uppercase, numeric, and special characters
 	var lowercase = confirm('Do you want lowercase characters in your password?');
 
 	// validate that the user has selected at least one type of character
+
 
 	// STEP 2 - logic to generate password
 	var allPossibleOptions = [];
@@ -32,8 +38,11 @@ function generatePassword() {
 		console.log(allPossibleOptions);
 	}
 	// check if user wanted uppercase characters - if so,update allPossibleOptions array
+
 	// check if user wanted special characters - if so,update allPossibleOptions array
+
 	// check if user wanted numeric characters - if so,update allPossibleOptions array
+
 
 	// return password
 	return passwordGenerated.join('');
