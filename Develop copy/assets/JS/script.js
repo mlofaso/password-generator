@@ -23,8 +23,8 @@ function generatePassword() {
 	// confirm whether or not to include lowercase, uppercase, numeric, and special characters
 	var lowercase = confirm('Do you want lowercase characters in your password?');
 	var uppercase = confirm('Do you want uppercase characters in your password?');
-	var numericCharacters = confirm('Do you want numeric characters in your password?');
-	var specialCharacters = confirm('Do you want special characters in your password?');
+	var numeric = confirm('Do you want numeric characters in your password?');
+	var special = confirm('Do you want special characters in your password?');
 	
 	// validate that the user has selected at least one type of character
 
