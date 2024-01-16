@@ -7,7 +7,7 @@ var specialCharactersArr = ' @, %, +, \\, /, ‘, !, #, $, ^, ?, :, ,, ), (, }, 
 
 // create a function that randomly selects an element from an array
 function randomSelection(arr) {
-	return; Math.floor(Math.random() * 128)
+	return Math.floor(Math.random() * arr.length)
 }
 
 function generatePassword() {
@@ -16,9 +16,12 @@ function generatePassword() {
 	var pwLength = prompt('Enter desired length of password');
 	pwLength = parseInt(pwLength);
 
-	// verify that pwLength is between 8 and 128 included - if not alert the user and exit the function
+	// verify that pwLength is between 8 and 128 included - if not alert the user and exit the function - if statement, create condition
 
-  
+	if (pwLength < 8 || pwLength > 128) {
+		alert('Password must be between 8 and 128 characters')
+		return;
+	}
 
 	// confirm whether or not to include lowercase, uppercase, numeric, and special characters
 	var lowercase = confirm('Do you want lowercase characters in your password?');
@@ -28,6 +31,10 @@ function generatePassword() {
 	
 	// validate that the user has selected at least one type of character
 
+	if (lowercase === false && uppercase === false && numeric === false && special === false) {
+		alert('Password must contain at least one type of character')
+		return;
+	}
 
 	// STEP 2 - logic to generate password
 	var allPossibleOptions = [];
@@ -36,31 +43,25 @@ function generatePassword() {
 	// check if user wanted lowercase characters - if so, concatenate lowercaseArr to allPossibleOptions array
 	if (lowercase) {
 		allPossibleOptions = allPossibleOptions.concat(lowercaseArr);
-		var mandatoryLowercase = randomSelection(lowercaseArr);
-		passwordGenerated.push(mandatoryLowercase);
-		console.log(allPossibleOptions);
 	}
 	// check if user wanted uppercase characters - if so,update allPossibleOptions array
 	if (uppercase) {
 		allPossibleOptions = allPossibleOptions.concat(uppercaseArr);
-		var mandatoryUppercase = randomSelection(uppercaseArr);
-		passwordGenerated.push(mandatoryUppercase);
-		console.log(allPossibleOptions);
 	}
 	// check if user wanted special characters - if so,update allPossibleOptions array
 	if (special) {
 		allPossibleOptions = allPossibleOptions.concat(specialCharactersArr);
-		var mandatorySpecialCharacters = randomSelection(specialCharactersArr);
-		passwordGenerated.push(specialCharactersArr);
-		console.log(allPossibleOptions);
 	}
 	// check if user wanted numeric characters - if so,update allPossibleOptions array
 	if (numeric) {
 		allPossibleOptions = allPossibleOptions.concat(numericCharactersArr);
-		var mandatoryNumericCharacters = randomSelection(numericCharactersArr);
-		passwordGenerated.push(mandatorynumericCharactersArr);
-		console.log(allPossibleOptions);
 	}	
+
+	for (var i = 0; i < pwLength; i++) {
+		var character = allPossibleOptions[randomSelection(allPossibleOptions)]
+		passwordGenerated.push(character)
+	}
+
 	// return password
 	return passwordGenerated.join('');
 }
@@ -74,4 +75,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener('click', writePassword);
+generateBtn.addEventListener('click', writePassword);``
