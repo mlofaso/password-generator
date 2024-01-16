@@ -3,7 +3,7 @@ var generateBtn = document.querySelector('#generate');
 var lowercaseArr = 'abcdefghijklmnopqrstuvwxyz'.split('');
 var uppercaseArr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 var numericCharactersArr = '0123456789'.split('');
-var specialCharactersArr = ''.split('');
+var specialCharactersArr = ' @, %, +, \\, /, ‘, !, #, $, ^, ?, :, ,, ), (, }, {, ], [, ~, -, _, .'.split('');
 
 // create a function that randomly selects an element from an array
 function randomSelection(arr) {
@@ -41,17 +41,26 @@ function generatePassword() {
 		console.log(allPossibleOptions);
 	}
 	// check if user wanted uppercase characters - if so,update allPossibleOptions array
-
-
-
+	if (uppercase) {
+		allPossibleOptions = allPossibleOptions.concat(uppercaseArr);
+		var mandatoryUppercase = randomSelection(uppercaseArr);
+		passwordGenerated.push(mandatoryUppercase);
+		console.log(allPossibleOptions);
+	}
 	// check if user wanted special characters - if so,update allPossibleOptions array
-
-
-
+	if (special) {
+		allPossibleOptions = allPossibleOptions.concat(specialCharactersArr);
+		var mandatorySpecialCharacters = randomSelection(specialCharactersArr);
+		passwordGenerated.push(specialCharactersArr);
+		console.log(allPossibleOptions);
+	}
 	// check if user wanted numeric characters - if so,update allPossibleOptions array
-
-
-
+	if (numeric) {
+		allPossibleOptions = allPossibleOptions.concat(numericCharactersArr);
+		var mandatoryNumericCharacters = randomSelection(numericCharactersArr);
+		passwordGenerated.push(mandatorynumericCharactersArr);
+		console.log(allPossibleOptions);
+	}	
 	// return password
 	return passwordGenerated.join('');
 }
